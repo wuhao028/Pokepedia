@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Pokepedia</string>
+    <string name="poke_home_title" >Pokemon Home</string>
+    <string name="poke_list_title">Pokemon List</string>
+    <string name="poke_details_title">Pokemon Detail</string>
+
 </resources>
