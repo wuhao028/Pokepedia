@@ -12,7 +12,7 @@
 
         <action
             android:id="@+id/action_garden_fragment_to_plant_detail_fragment"
-            app:destination="@id/plant_detail_fragment"
+            app:destination="@id/list_fragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -20,14 +20,14 @@
     </fragment>
 
     <fragment
-        android:id="@+id/plant_list_fragment"
+        android:id="@+id/list_fragment"
         android:name="com.wuhao028.pokepedia.PokeListFragment"
         android:label="@string/poke_list_title"
         tools:layout="@layout/fragment_list">
 
         <action
             android:id="@+id/action_plant_list_fragment_to_plant_detail_fragment"
-            app:destination="@id/plant_detail_fragment"
+            app:destination="@id/detail_fragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -35,7 +35,7 @@
     </fragment>
 
     <fragment
-        android:id="@+id/plant_detail_fragment"
+        android:id="@+id/detail_fragment"
         android:name="com.wuhao028.pokepedia.PokeDetailFragment"
         android:label="@string/poke_details_title"
         tools:layout="@layout/fragment_detail">
