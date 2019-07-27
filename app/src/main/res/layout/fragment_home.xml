@@ -28,6 +28,16 @@
             app:layout_constraintTop_toTopOf="@id/home_title"
             app:layout_constraintBottom_toBottomOf="@id/home_title"/>
 
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/search_corner"
+            app:layout_constraintTop_toBottomOf="@+id/home_pokeball"
+            app:iconifiedByDefault="false"
+            app:queryHint="@string/search_hint"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/generation_list"
             android:layout_width="match_parent"
@@ -37,7 +47,7 @@
             android:paddingLeft="@dimen/margin_normal"
             android:paddingRight="@dimen/margin_normal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintTop_toBottomOf="@+id/home_title"
+            app:layout_constraintTop_toBottomOf="@+id/search_view"
             tools:context="com.wuhao028.pokepedia.MainActivity"
             tools:listitem="@layout/list_item_generation" />
 

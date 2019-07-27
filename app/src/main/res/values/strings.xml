@@ -5,4 +5,5 @@
     <string name="poke_details_title">Pokemon Detail</string>
     <string name="a11y_plant_item_image">Picture of Generation</string>
     <string name="home_title">What Pokemon \nare you looking for?</string>
+    <string name="search_hint">Search Pokemon, Move, Ability etc</string>
 </resources>
