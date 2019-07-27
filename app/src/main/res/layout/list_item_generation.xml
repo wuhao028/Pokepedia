@@ -17,6 +17,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/corner_round_large"
+        android:elevation="6dp"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_normal"
         android:onClick="@{clickListener}">
 
         <TextView
@@ -28,6 +32,7 @@
             android:layout_marginEnd="@dimen/margin_small"
             android:layout_marginBottom="@dimen/margin_normal"
             android:gravity="center"
+            android:textStyle="bold"
             android:text="@{generation.name}"
             android:textAppearance="?attr/textAppearanceListItem"
             app:layout_constraintEnd_toEndOf="parent"
@@ -42,13 +47,14 @@
             android:layout_marginStart="@dimen/margin_small"
             android:layout_marginTop="@dimen/margin_normal"
             android:layout_marginEnd="@dimen/margin_small"
-            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_normal"
             android:contentDescription="@string/a11y_plant_item_image"
             android:scaleType="centerCrop"
             app:imageFromUrl="@{generation.imageUrl}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_item_title" />
+            app:layout_constraintTop_toBottomOf="@+id/plant_item_title"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
