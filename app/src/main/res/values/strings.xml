@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Pokepedia</string>
-    <string name="poke_home_title" >Pokemon Home</string>
+    <string name="poke_home_title">Pokemon Home</string>
     <string name="poke_list_title">Pokemon List</string>
     <string name="poke_details_title">Pokemon Detail</string>
-
+    <string name="a11y_plant_item_image">Picture of Generation</string>
+    <string name="home_title">What Pokemon \n are you looking for?</string>
 </resources>
