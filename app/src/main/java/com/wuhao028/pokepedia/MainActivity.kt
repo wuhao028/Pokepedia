@@ -1,7 +1,6 @@
 package com.wuhao028.pokepedia
 
 import android.os.Bundle
-import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -29,14 +28,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        AppDatabase.getInstance(this).generationDao().getGenerations().observe(this, Observer<List<Generation>>() {
-            println("@@generation size: "+it.size)
-        })
-        AppDatabase.getInstance(this).pokemonDao().getPokemons().observe(this, Observer<List<Pokemon>>() {
-            println("@@Pokemon size: "+it.size)
-        })
-        AppDatabase.getInstance(this).pokemonDao().getPokemon("1").observe(this, Observer<Pokemon>() {
-            println("@@Pokemon name: "+it?.name?.get("english"))
+        AppDatabase.getInstance(this).generationDao().getGenerations()
+            .observe(this, Observer<List<Generation>>() {
+                println("@@generation size: " + it.size)
+            })
+        AppDatabase.getInstance(this).pokemonDao().getPokemons()
+            .observe(this, Observer<List<Pokemon>>() {
+                println("@@Pokemon size: " + it.size)
+            })
+        AppDatabase.getInstance(this).pokemonDao().getPokemon(1).observe(this, Observer<Pokemon>() {
+            println("@@Pokemon name: " + it?.name?.get("english"))
         })
     }
 }

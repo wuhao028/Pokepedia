@@ -7,7 +7,7 @@ import com.google.gson.reflect.TypeToken
 class PokemonConverters {
 
     @TypeConverter
-    fun getTypeFromString(value: String):List<String>? {
+    fun getTypeFromString(value: String): List<String>? {
         return value.split(",")
     }
 

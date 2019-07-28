@@ -12,7 +12,7 @@ interface PokemonDao {
     fun getPokemons(): LiveData<List<Pokemon>>
 
     @Query("SELECT * FROM pokemons WHERE id = :pokemonId")
-    fun getPokemon(pokemonId: String): LiveData<Pokemon>
+    fun getPokemon(pokemonId: Int): LiveData<Pokemon>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(plants: List<Pokemon>)

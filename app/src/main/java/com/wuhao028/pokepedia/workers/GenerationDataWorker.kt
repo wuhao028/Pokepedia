@@ -9,9 +9,7 @@ import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.JsonReader
 import com.wuhao028.pokepedia.data.AppDatabase
 import com.wuhao028.pokepedia.data.Generation
-import com.wuhao028.pokepedia.data.Pokemon
 import com.wuhao028.pokepedia.utilities.GENERATION_DATA_FILENAME
-import com.wuhao028.pokepedia.utilities.POKEMON_DATA_FILENAME
 import kotlinx.coroutines.coroutineScope
 
 class GenerationDataWorker(

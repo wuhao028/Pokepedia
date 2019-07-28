@@ -6,7 +6,6 @@ class GenerationRepository private constructor(private val generationDao: Genera
 
     fun getGenerations() = generationDao.getGenerations()
 
-
     companion object {
 
         // For Singleton instantiation
