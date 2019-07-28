@@ -8,14 +8,17 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
 import com.wuhao028.pokepedia.adapters.GenerationAdapter
+import com.wuhao028.pokepedia.adapters.PokemonAdapter
 import com.wuhao028.pokepedia.databinding.FragmentHomeBinding
+import com.wuhao028.pokepedia.databinding.FragmentListBinding
 import com.wuhao028.pokepedia.utilities.InjectorUtils
 import com.wuhao028.pokepedia.viewmodels.GenerationListViewModel
+import com.wuhao028.pokepedia.viewmodels.PokemonListViewModel
 
 class PokeListFragment : Fragment() {
 
-    private val viewModel: GenerationListViewModel by viewModels {
-        InjectorUtils.provideGenerationListViewModelFactory(requireContext())
+    private val viewModel: PokemonListViewModel by viewModels {
+        InjectorUtils.providePokemonListViewModelFactory(requireContext())
     }
 
     override fun onCreateView(
@@ -23,20 +26,17 @@ class PokeListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentHomeBinding.inflate(inflater, container, false)
+        val binding = FragmentListBinding.inflate(inflater, container, false)
         context ?: return binding.root
-        val adapter = GenerationAdapter()
-        binding.generationList.adapter = adapter
-        binding.generationList.isNestedScrollingEnabled = false
-        binding.generationList.isFocusable = false
+        val adapter = PokemonAdapter()
+        binding.pokemonList.adapter = adapter
         subscribeUi(adapter)
-
         return binding.root
     }
 
-    private fun subscribeUi(adapter: GenerationAdapter) {
-        viewModel.generations.observe(viewLifecycleOwner) { generation ->
-            if (generation != null) adapter.submitList(generation)
+    private fun subscribeUi(adapter: PokemonAdapter) {
+        viewModel.pokemons.observe(viewLifecycleOwner) { pokemon ->
+            if (pokemon != null) adapter.submitList(pokemon)
         }
     }
 
