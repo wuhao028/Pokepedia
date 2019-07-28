@@ -28,7 +28,6 @@ class GenerationDataWorker(
                 JsonReader(inputStream.reader()).use { jsonReader ->
                     val plantType = object : TypeToken<List<Generation>>() {}.type
                     val plantList: List<Generation> = Gson().fromJson(jsonReader, plantType)
-                    Log.d("@@","@@ add all 01 ")
 
                     val database = AppDatabase.getInstance(applicationContext)
                     database.generationDao().insertAll(plantList)

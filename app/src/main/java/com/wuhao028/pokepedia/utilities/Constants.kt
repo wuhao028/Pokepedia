@@ -18,4 +18,5 @@ package com.wuhao028.pokepedia.utilities
 
 
 const val DATABASE_NAME = "pokepedia-db"
-const val PLANT_DATA_FILENAME = "generation.json"
+const val GENERATION_DATA_FILENAME = "generation.json"
+const val POKEMON_DATA_FILENAME = "pokedex.json"

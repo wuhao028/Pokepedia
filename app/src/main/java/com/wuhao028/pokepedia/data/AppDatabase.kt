@@ -1,9 +1,7 @@
 package com.wuhao028.pokepedia.data
 
 import android.content.Context
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
+import androidx.room.*
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
@@ -11,8 +9,9 @@ import com.wuhao028.pokepedia.utilities.DATABASE_NAME
 import com.wuhao028.pokepedia.workers.PokemonDatabaseWorker
 
 @Database(entities = [Pokemon::class, Generation::class], version = 1, exportSchema = false)
+@TypeConverters(PokemonConverters::class)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun PokemonDao(): PokemonDao
+    abstract fun pokemonDao(): PokemonDao
     abstract fun generationDao(): GenerationDao
 
     companion object {

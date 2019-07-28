@@ -25,7 +25,9 @@ import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.JsonReader
 import com.wuhao028.pokepedia.data.AppDatabase
 import com.wuhao028.pokepedia.data.Generation
-import com.wuhao028.pokepedia.utilities.PLANT_DATA_FILENAME
+import com.wuhao028.pokepedia.data.Pokemon
+import com.wuhao028.pokepedia.utilities.GENERATION_DATA_FILENAME
+import com.wuhao028.pokepedia.utilities.POKEMON_DATA_FILENAME
 import kotlinx.coroutines.coroutineScope
 
 class PokemonDatabaseWorker(
@@ -38,14 +40,23 @@ class PokemonDatabaseWorker(
     override suspend fun doWork(): Result = coroutineScope {
 
         try {
-            applicationContext.assets.open(PLANT_DATA_FILENAME).use { inputStream ->
+            applicationContext.assets.open(GENERATION_DATA_FILENAME).use { inputStream ->
                 JsonReader(inputStream.reader()).use { jsonReader ->
                     val plantType = object : TypeToken<List<Generation>>() {}.type
-                    val plantList: List<Generation> = Gson().fromJson(jsonReader, plantType)
+                    val generationList: List<Generation> = Gson().fromJson(jsonReader, plantType)
 
                     val database = AppDatabase.getInstance(applicationContext)
-                    database.generationDao().insertAll(plantList)
+                    database.generationDao().insertAll(generationList)
+                    Result.success()
+                }
+            }
+            applicationContext.assets.open(POKEMON_DATA_FILENAME).use { inputStream ->
+                JsonReader(inputStream.reader()).use { jsonReader ->
+                    val plantType = object : TypeToken<List<Pokemon>>() {}.type
+                    val pokemonList: List<Pokemon> = Gson().fromJson(jsonReader, plantType)
 
+                    val database = AppDatabase.getInstance(applicationContext)
+                    database.pokemonDao().insertAll(pokemonList)
                     Result.success()
                 }
             }
