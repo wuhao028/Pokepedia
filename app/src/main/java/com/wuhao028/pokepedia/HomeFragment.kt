@@ -1,5 +1,7 @@
 package com.wuhao028.pokepedia
 
+import android.animation.ObjectAnimator
+import android.animation.ValueAnimator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -30,7 +32,11 @@ class HomeFragment : Fragment() {
         binding.generationList.isNestedScrollingEnabled = false
         binding.generationList.isFocusable = false
         subscribeUi(adapter)
-
+        val animator = ObjectAnimator.ofFloat(binding.homePokeball, "rotation", 0f, 360f)
+        animator.duration = 2000
+        animator.repeatCount = -1
+        animator.repeatMode = ValueAnimator.RESTART
+        animator.start()
         return binding.root
     }
 
