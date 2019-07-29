@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             .observe(this, Observer<List<Generation>>() {
                 println("@@generation size: " + it.size)
             })
-        AppDatabase.getInstance(this).pokemonDao().getPokemons()
+        AppDatabase.getInstance(this).pokemonDao().getPokemonById(1,251)
             .observe(this, Observer<List<Pokemon>>() {
                 println("@@Pokemon size: " + it.size)
             })
