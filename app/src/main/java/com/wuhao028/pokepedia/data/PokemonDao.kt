@@ -8,7 +8,7 @@ import androidx.room.Query
 
 @Dao
 interface PokemonDao {
-    @Query("SELECT * FROM pokemons ORDER BY name")
+    @Query("SELECT * FROM pokemons ORDER BY id")
     fun getPokemons(): LiveData<List<Pokemon>>
 
     @Query("SELECT * FROM pokemons WHERE id = :pokemonId")

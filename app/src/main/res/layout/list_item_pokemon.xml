@@ -5,6 +5,7 @@
 
     <data>
 
+        <import type="com.wuhao028.pokepedia.utilities.ConstantsKt" alias="constants"/>
         <variable
             name="clickListener"
             type="android.view.View.OnClickListener" />
@@ -20,35 +21,78 @@
         android:background="@drawable/corner_round_large"
         android:elevation="6dp"
         android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginLeft="@dimen/padding_small"
+        android:layout_marginRight="@dimen/padding_small"
+        app:setColor="@{pokemon.type.get(0).toString()}"
         android:onClick="@{clickListener}">
 
         <TextView
             android:id="@+id/plant_item_title"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_small"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_small"
             android:layout_marginTop="@dimen/margin_small"
-            android:layout_marginEnd="@dimen/margin_small"
-            android:layout_marginBottom="@dimen/margin_normal"
             android:gravity="center"
             android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="@{pokemon.name.get(constants.POKEMON_ENGLISH_NAME).toString()}"
             android:textAppearance="?attr/textAppearanceListItem"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Tomato" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/pokemon_type_one"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:textColor="@color/white"
+            android:textSize="10dp"
+            android:paddingLeft="@dimen/padding_normal"
+            android:paddingRight="@dimen/padding_normal"
+            android:paddingBottom="@dimen/padding_small"
+            android:paddingTop="@dimen/padding_small"
+            android:gravity="center"
+            android:background="@drawable/text_round_small"
+            app:typeOne="@{pokemon.type}"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/plant_item_image"
+            app:layout_constraintTop_toBottomOf="@+id/plant_item_title"
+            app:layout_constraintBottom_toTopOf="@+id/pokemon_type_two"/>
+
+        <TextView
+            android:id="@+id/pokemon_type_two"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:textColor="@color/white"
+            android:textSize="10dp"
+            android:paddingLeft="@dimen/padding_normal"
+            android:paddingRight="@dimen/padding_normal"
+            android:paddingBottom="@dimen/padding_small"
+            android:paddingTop="@dimen/padding_small"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/margin_small"
+            android:background="@drawable/text_round_small"
+            app:typeTwo="@{pokemon.type}"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/plant_item_image"
+            app:layout_constraintTop_toBottomOf="@+id/pokemon_type_one"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <ImageView
             android:id="@+id/plant_item_image"
             android:layout_width="0dp"
             android:layout_height="@dimen/generation_item_image_height"
-            android:layout_marginStart="@dimen/margin_small"
-            android:layout_marginEnd="@dimen/margin_small"
-            android:layout_marginBottom="@dimen/margin_small"
             android:contentDescription="@string/a11y_plant_item_image"
             android:scaleType="fitCenter"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_weight="3"
+            app:localImage="@{pokemon.name.get(constants.POKEMON_ENGLISH_NAME).toString()}"
+            app:layout_constraintLeft_toRightOf="@+id/pokemon_type_one"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/plant_item_title"
             app:layout_constraintBottom_toBottomOf="parent"/>
 

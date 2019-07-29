@@ -11,7 +11,7 @@ import com.wuhao028.pokepedia.PokeListFragmentDirections
 import com.wuhao028.pokepedia.data.Pokemon
 import com.wuhao028.pokepedia.databinding.ListItemPokemonBinding
 
-class PokemonAdapter:
+class PokemonAdapter :
     ListAdapter<Pokemon, PokemonAdapter.ViewHolder>(PokemonDiffCallback()) {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -32,18 +32,19 @@ class PokemonAdapter:
 
     private fun createOnClickListener(plantId: Int): View.OnClickListener {
         return View.OnClickListener {
-            val direction = PokeListFragmentDirections.actionPlantListFragmentToPlantDetailFragment(plantId.toString())
+            val direction =
+                PokeListFragmentDirections.actionPlantListFragmentToPlantDetailFragment(plantId.toString())
             it.findNavController().navigate(direction)
         }
     }
 
-    class ViewHolder(private val binding: ListItemPokemonBinding)
-        : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(private val binding: ListItemPokemonBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun bind(listener: View.OnClickListener, item: Pokemon) {
             binding.apply {
                 clickListener = listener
-                pokemon  = item
+                pokemon = item
                 executePendingBindings()
             }
         }

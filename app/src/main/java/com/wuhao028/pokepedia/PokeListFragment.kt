@@ -7,12 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
-import com.wuhao028.pokepedia.adapters.GenerationAdapter
+import androidx.recyclerview.widget.GridLayoutManager
 import com.wuhao028.pokepedia.adapters.PokemonAdapter
-import com.wuhao028.pokepedia.databinding.FragmentHomeBinding
 import com.wuhao028.pokepedia.databinding.FragmentListBinding
 import com.wuhao028.pokepedia.utilities.InjectorUtils
-import com.wuhao028.pokepedia.viewmodels.GenerationListViewModel
 import com.wuhao028.pokepedia.viewmodels.PokemonListViewModel
 
 class PokeListFragment : Fragment() {
@@ -30,6 +28,7 @@ class PokeListFragment : Fragment() {
         context ?: return binding.root
         val adapter = PokemonAdapter()
         binding.pokemonList.adapter = adapter
+        binding.pokemonList.layoutManager = GridLayoutManager(requireContext(), 2)
         subscribeUi(adapter)
         return binding.root
     }

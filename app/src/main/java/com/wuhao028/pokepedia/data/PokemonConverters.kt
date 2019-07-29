@@ -13,11 +13,11 @@ class PokemonConverters {
 
     @TypeConverter
     fun storeTypeToString(list: List<String>): String {
-        val str = StringBuilder(list[0])
+        val str = StringBuilder()
         list.forEach {
             str.append(",").append(it)
         }
-        return str.toString()
+        return str.toString().substring(1)
     }
 
     @TypeConverter
