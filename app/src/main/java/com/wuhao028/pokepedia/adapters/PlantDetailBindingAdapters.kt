@@ -29,7 +29,9 @@ fun bindImageFromLocal(view: ImageView, imageName: String) {
     if (!imageName.isNullOrEmpty()) {
         val resId = view.context.resources.getIdentifier(
             imageName.replace(" ", "")
-                .replace("-", "").toLowerCase(),
+                .replace("-", "")
+                .replace("_","")
+                .toLowerCase(),
             "mipmap", view.context.packageName
         )
         try {
