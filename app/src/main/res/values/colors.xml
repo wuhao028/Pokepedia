@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#53C2A8</color>
-    <color name="colorPrimaryDark">#53C2A8</color>
+    <color name="colorPrimary">#00000000</color>
+    <color name="colorPrimaryDark">#00000000</color>
     <color name="colorAccent">#D81B60</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
@@ -12,7 +12,7 @@
     <color name="type_water">#7AC0FC</color>
     <color name="type_dark">#705848</color>
     <color name="type_dragon">#7038F8</color>
-    <color name="type_electric">#F8D030</color>
+    <color name="type_electric">#FED676</color>
     <color name="type_fairy">#EE99AC</color>
     <color name="type_fighting">#C03028</color>
     <color name="type_fire">#F0696B</color>

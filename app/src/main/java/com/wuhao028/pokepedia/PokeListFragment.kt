@@ -29,15 +29,19 @@ class PokeListFragment : Fragment() {
         val binding = FragmentListBinding.inflate(inflater, container, false)
         context ?: return binding.root
         val adapter = PokemonAdapter()
+        binding.pokemonProgress.visibility = View.VISIBLE
         binding.pokemonList.adapter = adapter
         binding.pokemonList.layoutManager = GridLayoutManager(requireContext(), 2)
-        subscribeUi(adapter)
+        subscribeUi(adapter,binding)
         return binding.root
     }
 
-    private fun subscribeUi(adapter: PokemonAdapter) {
+    private fun subscribeUi(adapter: PokemonAdapter,binding:FragmentListBinding) {
         viewModel.pokemons.observe(viewLifecycleOwner) { pokemon ->
-            if (pokemon != null) adapter.submitList(pokemon)
+            if (pokemon != null) {
+                binding.pokemonProgress.visibility = View.GONE
+                adapter.submitList(pokemon)
+            }
         }
     }
 

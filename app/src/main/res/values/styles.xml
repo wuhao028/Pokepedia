@@ -18,6 +18,7 @@
     </style>
 
     <style name="AppTheme.NoActionBar">
+        <item name="android:windowBackground">@mipmap/window_background</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

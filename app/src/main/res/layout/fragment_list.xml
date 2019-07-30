@@ -20,6 +20,12 @@
         tools:context="com.wuhao028.pokepedia.MainActivity"
         tools:listitem="@layout/list_item_pokemon" />
 
+    <ProgressBar
+        android:id="@+id/pokemon_progress"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
 </LinearLayout>
 
 </layout>
