@@ -6,12 +6,27 @@ object PokeUtils {
 
     @JvmStatic
     fun getColorByType(type: String): Int {
-        var result: Int = R.drawable.round_grass
+        var result: Int = R.drawable.background_grass
         when (type) {
-            "Grass" -> result = R.drawable.round_grass
-            "Fire" -> result = R.drawable.round_fire
-            "Water" -> result = R.drawable.round_water
-            else -> result = R.drawable.round_grass
+            "Bug" -> result = R.drawable.background_bug
+            "Grass" -> result = R.drawable.background_grass
+            "Fire" -> result = R.drawable.background_fire
+            "Water" -> result = R.drawable.background_water
+            "Dark" -> result = R.drawable.background_dark
+            "Dragon" -> result = R.drawable.background_dragon
+            "Electric" -> result = R.drawable.background_electric
+            "Fairy" -> result = R.drawable.background_fairy
+            "Fighting" -> result = R.drawable.background_fighting
+            "Flying" -> result = R.drawable.background_flying
+            "Ghost" -> result = R.drawable.background_ghost
+            "Ground" -> result = R.drawable.background_ground
+            "Ice" -> result = R.drawable.background_ice
+            "Normal" -> result = R.drawable.background_normal
+            "Poison" -> result = R.drawable.background_poison
+            "Psychic" -> result = R.drawable.background_psychic
+            "Rock" -> result = R.drawable.background_rock
+            "Steel" -> result = R.drawable.background_steel
+            else -> result = R.drawable.background_grass
         }
         return result
     }

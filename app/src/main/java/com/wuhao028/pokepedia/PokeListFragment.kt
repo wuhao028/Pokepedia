@@ -41,5 +41,4 @@ class PokeListFragment : Fragment() {
         }
     }
 
-
 }
