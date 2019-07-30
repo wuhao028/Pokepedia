@@ -12,7 +12,7 @@ import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.wuhao028.pokepedia.utilities.PokeColorUtils
+import com.wuhao028.pokepedia.utilities.PokeUtils
 
 @BindingAdapter("imageFromUrl")
 fun bindImageFromUrl(view: ImageView, imageUrl: String) {
@@ -47,7 +47,7 @@ fun bindImageFromLocal(view: ImageView, imageName: String) {
 
 @BindingAdapter("setColor")
 fun bindsetColor(view: ConstraintLayout, type: String) {
-    val resId = PokeColorUtils.getColorByType(type)
+    val resId = PokeUtils.getColorByType(type)
     val drawable = ContextCompat.getDrawable(view.context, resId)
     view.setBackgroundDrawable(drawable)
 }

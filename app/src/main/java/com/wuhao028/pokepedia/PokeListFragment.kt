@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import com.wuhao028.pokepedia.adapters.PokemonAdapter
 import com.wuhao028.pokepedia.databinding.FragmentListBinding
@@ -15,8 +16,9 @@ import com.wuhao028.pokepedia.viewmodels.PokemonListViewModel
 
 class PokeListFragment : Fragment() {
 
+    private val args: PokeListFragmentArgs by navArgs()
     private val viewModel: PokemonListViewModel by viewModels {
-        InjectorUtils.providePokemonListViewModelFactory(requireContext())
+        InjectorUtils.providePokemonListViewModelFactory(requireContext(),args.generationId)
     }
 
     override fun onCreateView(

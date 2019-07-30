@@ -32,6 +32,9 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="generationId"
+            app:argType="string" />
     </fragment>
 
     <fragment
@@ -40,7 +43,7 @@
         android:label="@string/poke_details_title"
         tools:layout="@layout/fragment_detail">
         <argument
-            android:name="plantId"
+            android:name="pokemonId"
             app:argType="string" />
     </fragment>
 

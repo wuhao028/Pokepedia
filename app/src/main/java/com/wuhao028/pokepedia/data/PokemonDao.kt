@@ -15,7 +15,7 @@ interface PokemonDao {
     fun getPokemon(pokemonId: Int): LiveData<Pokemon>
 
     @Query("SELECT * FROM pokemons WHERE id Between :pokemonIdMin AND :pokemonIdMax")
-    fun getPokemonById(pokemonIdMin: Int,pokemonIdMax: Int):  LiveData<List<Pokemon>>
+    fun getPokemonByRange(pokemonIdMin: Int, pokemonIdMax: Int):  LiveData<List<Pokemon>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(plants: List<Pokemon>)

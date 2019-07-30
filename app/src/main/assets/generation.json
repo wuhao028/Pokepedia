@@ -34,5 +34,17 @@
     "name": "Generation VI",
     "description": "An apple is a sweet",
     "imageUrl": "https://img.mp.itc.cn/upload/20161210/3e5c0b52e4af4727a51b4d05802f1a46.jpg"
+  },
+  {
+    "generationId": "7",
+    "name": "Generation VII",
+    "description": "An apple is a sweet",
+    "imageUrl": "https://img.mp.itc.cn/upload/20161210/f6ccf1f9bbc94cf7818c96bd3361d01b.jpg"
+  },
+  {
+    "generationId": "8",
+    "name": "Generation VIII",
+    "description": "An apple is a sweet",
+    "imageUrl": "https://wegotthiscovered.com/wp-content/uploads/2019/02/Screenshot-2019-02-27-15.56.30.png"
   }
 ]
