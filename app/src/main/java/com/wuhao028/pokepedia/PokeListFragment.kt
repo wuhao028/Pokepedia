@@ -40,6 +40,7 @@ class PokeListFragment : Fragment() {
         viewModel.pokemons.observe(viewLifecycleOwner) { pokemon ->
             if (pokemon != null) {
                 binding.pokemonProgress.visibility = View.GONE
+                binding.pokemonList.visibility = View.VISIBLE
                 adapter.submitList(pokemon)
             }
         }
