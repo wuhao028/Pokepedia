@@ -45,6 +45,27 @@ fun bindImageFromLocal(view: ImageView, imageName: String) {
     }
 }
 
+@BindingAdapter("localGif")
+fun bindGifFromLocal(view: ImageView, imageName: String) {
+    if (!imageName.isNullOrEmpty()) {
+        val resId = view.context.resources.getIdentifier(
+            imageName.replace(" ", "")
+                .replace("-", "")
+                .replace("_","")
+                .toLowerCase(),
+            "mipmap", view.context.packageName
+        )
+        try {
+            val drawable = ContextCompat.getDrawable(view.context, resId)
+            Glide.with(view.context)
+                .load(drawable)
+                .into(view)
+        } catch (e: Exception) {
+
+        }
+    }
+}
+
 @BindingAdapter("setColor")
 fun bindsetColor(view: ConstraintLayout, type: String) {
     val resId = PokeUtils.getColorByType(type)

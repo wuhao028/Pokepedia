@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
+import com.bumptech.glide.Glide
 import com.wuhao028.pokepedia.adapters.PokemonAdapter
 import com.wuhao028.pokepedia.databinding.FragmentListBinding
 import com.wuhao028.pokepedia.utilities.InjectorUtils
@@ -29,6 +30,9 @@ class PokeListFragment : Fragment() {
         val binding = FragmentListBinding.inflate(inflater, container, false)
         context ?: return binding.root
         val adapter = PokemonAdapter()
+        Glide.with(this.requireContext())
+            .load(R.mipmap.loading)
+            .into(binding.pokemonProgress)
         binding.pokemonProgress.visibility = View.VISIBLE
         binding.pokemonList.adapter = adapter
         binding.pokemonList.layoutManager = GridLayoutManager(requireContext(), 2)
