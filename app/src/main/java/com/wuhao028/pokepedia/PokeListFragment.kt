@@ -19,7 +19,7 @@ class PokeListFragment : Fragment() {
 
     private val args: PokeListFragmentArgs by navArgs()
     private val viewModel: PokemonListViewModel by viewModels {
-        InjectorUtils.providePokemonListViewModelFactory(requireContext(),args.generationId)
+        InjectorUtils.providePokemonListViewModelFactory(requireContext(), args.generationId)
     }
 
     override fun onCreateView(
@@ -36,11 +36,11 @@ class PokeListFragment : Fragment() {
         binding.pokemonProgress.visibility = View.VISIBLE
         binding.pokemonList.adapter = adapter
         binding.pokemonList.layoutManager = GridLayoutManager(requireContext(), 2)
-        subscribeUi(adapter,binding)
+        subscribeUi(adapter, binding)
         return binding.root
     }
 
-    private fun subscribeUi(adapter: PokemonAdapter,binding:FragmentListBinding) {
+    private fun subscribeUi(adapter: PokemonAdapter, binding: FragmentListBinding) {
         viewModel.pokemons.observe(viewLifecycleOwner) { pokemon ->
             if (pokemon != null) {
                 binding.pokemonProgress.visibility = View.GONE

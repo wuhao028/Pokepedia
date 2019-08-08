@@ -30,7 +30,7 @@ fun bindImageFromLocal(view: ImageView, imageName: String) {
         val resId = view.context.resources.getIdentifier(
             imageName.replace(" ", "")
                 .replace("-", "")
-                .replace("_","")
+                .replace("_", "")
                 .toLowerCase(),
             "mipmap", view.context.packageName
         )
@@ -51,7 +51,7 @@ fun bindGifFromLocal(view: ImageView, imageName: String) {
         val resId = view.context.resources.getIdentifier(
             imageName.replace(" ", "")
                 .replace("-", "")
-                .replace("_","")
+                .replace("_", "")
                 .toLowerCase(),
             "mipmap", view.context.packageName
         )

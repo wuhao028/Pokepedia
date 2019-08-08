@@ -23,9 +23,12 @@ object InjectorUtils {
         return GenerationListViewModelFactory(repository)
     }
 
-    fun providePokemonListViewModelFactory(context: Context,generationId: String): PokemonListViewModelFactory {
+    fun providePokemonListViewModelFactory(
+        context: Context,
+        generationId: String
+    ): PokemonListViewModelFactory {
         val repository = getPokemonRepository(context)
-        return PokemonListViewModelFactory(repository,generationId)
+        return PokemonListViewModelFactory(repository, generationId)
     }
 
 }

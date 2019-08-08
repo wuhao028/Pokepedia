@@ -1,6 +1,5 @@
 package com.wuhao028.pokepedia.adapters
 
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +8,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.wuhao028.pokepedia.HomeFragmentDirections
-import com.wuhao028.pokepedia.PokeListFragmentArgs
 import com.wuhao028.pokepedia.data.Generation
 import com.wuhao028.pokepedia.databinding.ListItemGenerationBinding
 
@@ -34,7 +32,8 @@ class GenerationAdapter :
 
     private fun createOnClickListener(generationId: String): View.OnClickListener {
         return View.OnClickListener {
-            val direction = HomeFragmentDirections.actionGardenFragmentToPlantDetailFragment(generationId)
+            val direction =
+                HomeFragmentDirections.actionGardenFragmentToPlantDetailFragment(generationId)
             it.findNavController().navigate(direction)
         }
     }
