@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.wuhao028.pokepedia.data.PokemonDetailRepository
+import com.wuhao028.pokepedia.data.PokemonInfoRepository
 import com.wuhao028.pokepedia.data.PokemonInfo
 import com.wuhao028.pokepedia.data.net.PokeNetwork
 import kotlinx.coroutines.Dispatchers
@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class PokemonViewModel(
-    pokemonDetailRepository: PokemonDetailRepository,
+    pokemonInfoRepository: PokemonInfoRepository,
     pokemonId: Int
 ) : ViewModel() {
 
