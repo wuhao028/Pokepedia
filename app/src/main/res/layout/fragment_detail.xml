@@ -58,14 +58,7 @@
                 app:layout_constraintLeft_toRightOf="@+id/pokemon_name"
                 app:layout_constraintHorizontal_weight="1"/>
 
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
