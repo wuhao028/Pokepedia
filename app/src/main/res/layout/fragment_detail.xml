@@ -58,6 +58,31 @@
                 app:layout_constraintLeft_toRightOf="@+id/pokemon_name"
                 app:layout_constraintHorizontal_weight="1"/>
 
+            <TextView
+                android:id="@+id/pokemon_type_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Water"
+                android:paddingLeft="@dimen/padding_big"
+                android:paddingRight="@dimen/padding_big"
+                android:background="@drawable/corner_round_large"
+                app:layout_constraintTop_toBottomOf="@+id/pokemon_name"
+                app:layout_constraintLeft_toLeftOf="@+id/pokemon_name"
+                app:layout_constraintRight_toLeftOf="@+id/pokemon_type_two"/>
+
+            <TextView
+                android:id="@+id/pokemon_type_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Poison"
+                android:paddingLeft="@dimen/padding_big"
+                android:paddingRight="@dimen/padding_big"
+                android:layout_marginLeft="@dimen/margin_normal"
+                android:background="@drawable/corner_round_large"
+                app:layout_constraintTop_toBottomOf="@+id/pokemon_name"
+                app:layout_constraintLeft_toRightOf="@+id/pokemon_type_one"/>
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
