@@ -28,5 +28,5 @@
     <color name="type_steel">#B8B8D0</color>
     <color name="transparent_white">#80FFFFFF</color>
     <color name="lemon">#00ff00</color><!--酸橙色 -->
-    <color name="lime">#00ff11</color><!--酸橙色 -->
+    <color name="lime">#00ff00</color><!--酸橙色 -->
 </resources>
