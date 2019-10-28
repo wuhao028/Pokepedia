@@ -42,7 +42,7 @@ class PokeListFragment : Fragment() {
 
     private fun subscribeUi(adapter: PokemonAdapter, binding: FragmentListBinding) {
         viewModel.pokemons.observe(viewLifecycleOwner) { pokemon ->
-            if (pokemon != null) {
+            pokemon?.let {
                 binding.pokemonProgress.visibility = View.GONE
                 binding.pokemonList.visibility = View.VISIBLE
                 adapter.submitList(pokemon)
