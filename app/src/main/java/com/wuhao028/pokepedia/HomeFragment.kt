@@ -42,7 +42,7 @@ class HomeFragment : Fragment() {
 
     private fun subscribeUi(adapter: GenerationAdapter) {
         viewModel.generations.observe(viewLifecycleOwner) { generation ->
-            if (generation != null) adapter.submitList(generation)
+            adapter.submitList(generation)
         }
     }
 
